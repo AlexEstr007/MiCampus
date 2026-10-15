@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="MiCampus" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <!--  La app inicia en el Splash  -->
+        <activity android:name=".SplashActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegistroActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".NuevoReporteActivity"/>
+        <activity android:name=".MisReportesActivity"/>
+        <activity android:name=".DetalleReporteActivity"/>
+        <activity android:name=".PerfilActivity"/>
+        <activity android:name=".AdminActivity"/>
+    </application>
+</manifest>

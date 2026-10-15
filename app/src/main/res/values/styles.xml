@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Boton azul del prototipo -->
+    <style name="BotonAzul" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_boton</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BotonRojo" parent="BotonAzul">
+        <item name="android:background">@drawable/bg_boton_rojo</item>
+    </style>
+
+    <!-- Etiqueta (titulo de un campo) -->
+    <style name="Etiqueta">
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Cuadro de texto -->
+    <style name="Campo" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_campo</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textColorHint">@color/gris</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>
