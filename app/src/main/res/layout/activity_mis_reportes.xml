@@ -33,7 +33,7 @@
         android:id="@+id/btnNuevo"
         style="@style/BotonAzul"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:layout_margin="16dp"
         android:text="Nuevo reporte" />
 </LinearLayout>
