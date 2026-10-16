@@ -17,21 +17,6 @@
             style="@style/Etiqueta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre completo" />
-
-        <EditText
-            android:id="@+id/etNombre"
-            style="@style/Campo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Nombre"
-            android:inputType="textPersonName" />
-
-        <TextView
-            style="@style/Etiqueta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Correo institucional" />
 
@@ -43,6 +28,21 @@
             android:layout_marginTop="8dp"
             android:hint="Correo"
             android:inputType="textEmailAddress" />
+
+        <TextView
+            style="@style/Etiqueta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre completo" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            style="@style/Campo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
 
         <TextView
             style="@style/Etiqueta"
