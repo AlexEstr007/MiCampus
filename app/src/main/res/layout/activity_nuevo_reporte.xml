@@ -43,12 +43,13 @@
             android:hint="Describe el problema..."
             android:inputType="textMultiLine|textCapSentences" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnEnviar"
-            style="@style/BotonAzul"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Enviar" />
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnviar"
+        style="@style/BotonAzul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Enviar" />
 </LinearLayout>
