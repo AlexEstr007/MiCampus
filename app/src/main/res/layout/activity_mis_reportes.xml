@@ -22,7 +22,7 @@
     <ListView
         android:id="@+id/lvReportes"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="558dp"
         android:layout_weight="1"
         android:clipToPadding="false"
         android:divider="@null"
@@ -33,7 +33,7 @@
         android:id="@+id/btnNuevo"
         style="@style/BotonAzul"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_margin="16dp"
         android:text="Nuevo reporte" />
 </LinearLayout>
