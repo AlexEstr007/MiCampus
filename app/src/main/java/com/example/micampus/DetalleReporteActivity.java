@@ -51,8 +51,12 @@ public class DetalleReporteActivity extends AppCompatActivity {
         rbCalificacion.setRating(r.calificacion);
 
         findViewById(R.id.btnActualizar).setOnClickListener(v -> {
-            db.actualizarReporte(id, spEstado.getSelectedItem().toString(),
-                    (int) rbCalificacion.getRating());
+            String nuevoEstado = spEstado.getSelectedItem().toString();
+            db.actualizarReporte(id, nuevoEstado, (int) rbCalificacion.getRating());
+            // Si el admin cambio el estado, se avisa al alumno por la API externa (ntfy)
+            if (esAdmin && !nuevoEstado.equals(r.estado)) {
+                Notificador.avisarCambioEstado(this, r, nuevoEstado);
+            }
             Toast.makeText(this, "Reporte actualizado", Toast.LENGTH_SHORT).show();
             finish();
         });

@@ -15,6 +15,11 @@ public class Sesion {
                 .apply();
     }
 
+    public static void actualizarNombre(Context c, String nombre) {
+        c.getSharedPreferences("sesion", Context.MODE_PRIVATE).edit()
+                .putString("nombre", nombre).apply();
+    }
+
     // clave puede ser "correo", "nombre" o "rol"
     public static String get(Context c, String clave) {
         return c.getSharedPreferences("sesion", Context.MODE_PRIVATE).getString(clave, "");

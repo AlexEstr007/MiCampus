@@ -37,6 +37,8 @@ public class MenuActivity extends AppCompatActivity {
             menu.show();
         });
 
+        Notificador.pedirPermiso(this);
+
         findViewById(R.id.tileNuevo).setOnClickListener(v ->
                 startActivity(new Intent(this, NuevoReporteActivity.class)));
         findViewById(R.id.tileMis).setOnClickListener(v ->
@@ -44,5 +46,12 @@ public class MenuActivity extends AppCompatActivity {
         findViewById(R.id.tilePerfil).setOnClickListener(v ->
                 startActivity(new Intent(this, PerfilActivity.class)));
         findViewById(R.id.tileSalir).setOnClickListener(v -> Sesion.cerrar(this));
+    }
+
+    // Cada vez que el alumno regresa al menu se consultan sus avisos nuevos
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Notificador.revisarAvisos(this);
     }
 }

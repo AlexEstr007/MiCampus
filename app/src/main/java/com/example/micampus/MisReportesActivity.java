@@ -51,6 +51,9 @@ public class MisReportesActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (!esAdmin) {
+            Notificador.revisarAvisos(this);
+        }
         if (esAdmin) {
             lista = db.obtenerReportes(null);
         } else {

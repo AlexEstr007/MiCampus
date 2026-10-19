@@ -67,6 +67,21 @@ public class DBHelper extends SQLiteOpenHelper {
         return datos;
     }
 
+    public void actualizarNombre(String correo, String nombre) {
+        ContentValues v = new ContentValues();
+        v.put("nombre", nombre);
+        getWritableDatabase().update("usuarios", v, "correo=?", new String[]{correo});
+    }
+
+    // Devuelve false si la contrasena actual no coincide
+    public boolean cambiarPassword(String correo, String actual, String nueva) {
+        ContentValues v = new ContentValues();
+        v.put("password", nueva);
+        int filas = getWritableDatabase().update("usuarios", v,
+                "correo=? AND password=?", new String[]{correo, actual});
+        return filas > 0;
+    }
+
     public int contarUsuarios() {
         Cursor c = getReadableDatabase().rawQuery("SELECT COUNT(*) FROM usuarios", null);
         c.moveToFirst();
