@@ -17,5 +17,7 @@
         <activity android:name=".DetalleReporteActivity"/>
         <activity android:name=".PerfilActivity"/>
         <activity android:name=".AdminActivity"/>
+        <activity android:name=".UsuariosActivity"/>
+        <activity android:name=".ConfiguracionActivity"/>
     </application>
 </manifest>

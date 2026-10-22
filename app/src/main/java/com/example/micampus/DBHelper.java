@@ -90,6 +90,34 @@ public class DBHelper extends SQLiteOpenHelper {
         return total;
     }
 
+    // Lista de usuarios para el administrador: {nombre, correo, rol, total de reportes}
+    public ArrayList<String[]> obtenerUsuarios() {
+        ArrayList<String[]> lista = new ArrayList<>();
+        Cursor c = getReadableDatabase().rawQuery(
+                "SELECT u.nombre, u.correo, u.rol, " +
+                "(SELECT COUNT(*) FROM reportes r WHERE r.correo = u.correo) " +
+                "FROM usuarios u ORDER BY u.rol, u.nombre", null);
+        while (c.moveToNext()) {
+            lista.add(new String[]{c.getString(0), c.getString(1), c.getString(2),
+                    String.valueOf(c.getInt(3))});
+        }
+        c.close();
+        return lista;
+    }
+
+    // El administrador restablece la contrasena de un usuario
+    public void restablecerPassword(String correo, String nueva) {
+        ContentValues v = new ContentValues();
+        v.put("password", nueva);
+        getWritableDatabase().update("usuarios", v, "correo=?", new String[]{correo});
+    }
+
+    // Elimina al usuario y todos sus reportes
+    public void eliminarUsuario(String correo) {
+        getWritableDatabase().delete("reportes", "correo=?", new String[]{correo});
+        getWritableDatabase().delete("usuarios", "correo=? AND rol<>'admin'", new String[]{correo});
+    }
+
     // ---------- REPORTES ----------
 
     public void agregarReporte(String correo, String categoria, String descripcion) {

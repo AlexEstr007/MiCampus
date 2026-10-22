@@ -38,10 +38,9 @@ public class AdminActivity extends AppCompatActivity {
         findViewById(R.id.rowReportes).setOnClickListener(v ->
                 startActivity(new Intent(this, MisReportesActivity.class)));
         findViewById(R.id.rowUsuarios).setOnClickListener(v ->
-                Toast.makeText(this, "Usuarios registrados: " + db.contarUsuarios(),
-                        Toast.LENGTH_SHORT).show());
+                startActivity(new Intent(this, UsuariosActivity.class)));
         findViewById(R.id.rowConfig).setOnClickListener(v ->
-                Toast.makeText(this, "Disponible en una versión futura", Toast.LENGTH_SHORT).show());
+                startActivity(new Intent(this, ConfiguracionActivity.class)));
     }
 
     // Las estadisticas se actualizan cada vez que se regresa a esta pantalla

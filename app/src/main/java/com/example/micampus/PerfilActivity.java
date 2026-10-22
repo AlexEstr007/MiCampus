@@ -31,7 +31,8 @@ public class PerfilActivity extends AppCompatActivity {
 
         findViewById(R.id.rowEditar).setOnClickListener(v -> editarNombre());
         findViewById(R.id.rowCambiar).setOnClickListener(v -> cambiarPassword());
-        findViewById(R.id.rowConfig).setOnClickListener(v -> configuracion());
+        findViewById(R.id.rowConfig).setOnClickListener(v ->
+                startActivity(new android.content.Intent(this, ConfiguracionActivity.class)));
     }
 
     void editarNombre() {

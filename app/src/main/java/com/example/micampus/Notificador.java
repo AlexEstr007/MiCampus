@@ -52,6 +52,16 @@ public class Notificador {
         }
     }
 
+    // Ajuste de Configuración: recibir avisos de cambio de estado (por defecto, si)
+    public static boolean avisosActivos(Context c) {
+        return c.getSharedPreferences("ajustes", Context.MODE_PRIVATE).getBoolean("avisos", true);
+    }
+
+    public static void setAvisosActivos(Context c, boolean activos) {
+        c.getSharedPreferences("ajustes", Context.MODE_PRIVATE).edit()
+                .putBoolean("avisos", activos).apply();
+    }
+
     // ---------- ENVIAR (lo usa el admin) ----------
 
     public static void avisarCambioEstado(Context context, Reporte r, String nuevoEstado) {
@@ -98,6 +108,7 @@ public class Notificador {
         final Context app = context.getApplicationContext();
         final String correo = Sesion.get(app, "correo");
         if (correo.isEmpty() || Sesion.get(app, "rol").equals("admin")) return;
+        if (!avisosActivos(app)) return;   // apagados en Configuración
 
         hilo.execute(() -> {
             try {
