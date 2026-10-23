@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// Pantalla 2: Iniciar sesion
 public class LoginActivity extends AppCompatActivity {
 
     EditText etCorreo, etPassword;
@@ -29,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         DBHelper db = new DBHelper(this);
 
-        // Boton para mostrar / ocultar la contrasena
         findViewById(R.id.tvVer).setOnClickListener(v -> {
             verPassword = !verPassword;
             if (verPassword) {

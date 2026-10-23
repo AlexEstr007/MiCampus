@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321885924608",
+    "project_id": "mi-campus-604f9",
+    "storage_bucket": "mi-campus-604f9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321885924608:android:26632d21b9d7970e70d7e5",
+        "android_client_info": {
+          "package_name": "com.example.micampus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_8HlEwZYr1bFtZyyHEcE_0hk5so-7jdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
